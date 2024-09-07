@@ -24,8 +24,19 @@
 
 // let score = 18
 // let score = null
-let score = undefined
+// let score = undefined
 
-let newScore = String(score)
+// let newScore = String(score)
 
-console.log(newScore);
+// console.log(newScore);
+
+
+/*** Operations ***/
+
+console.log("1" + 3 + 2); // 132
+
+console.log(2 + 4 + "1"); // 61
+
+console.log(+false);
+
+console.log(-"");
