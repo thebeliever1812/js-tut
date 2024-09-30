@@ -57,3 +57,4 @@ userTwo.age = 33
 console.log(userOne.email);
 console.log(userTwo.email);
 console.log(userOne.age);
+console.log(typeof(userOne));
