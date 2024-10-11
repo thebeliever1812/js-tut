@@ -23,6 +23,13 @@
         "wayou.vscode-todo-highlight",
         "formulahendry.code-runner"
       ],
+      "keybindings": [
+        {
+          "key": "f3",
+          "command": "code-runner.run",
+          "when": "editorTextFocus"
+        }
+      ],
       "settings": {
         "editor.fontSize": 18,
         "terminal.integrated.fontSize": 14,
