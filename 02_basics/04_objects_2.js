@@ -2,7 +2,7 @@ const tinderUser = new Object(); // Singleton Object // create by constructor
 
 tinderUser.name = "Basir";
 tinderUser.id = "123abc";
-tinderUser.isLoggedIn = true
+tinderUser.isLoggedIn = true;
 
 const regularUser = {
   // Non-singleton object
@@ -46,11 +46,40 @@ const users = [
 
 // console.log(users[1].email);         // how can i access
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser));        // ***IMP: it gives output in the form of array so we can apply loops etc for array
+// console.log(Object.keys(tinderUser));        // ***IMP: it gives output in the form of array so we can apply loops etc for array
 
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));    // it gives result in array into array
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));    // it gives result in array into array
 
-console.log(tinderUser.hasOwnProperty('isLogged'));    // To check the property is present or not 
+// console.log(tinderUser.hasOwnProperty('isLogged'));    // To check the property is present or not
+
+const course = {
+  courseName: "JavaScript",
+  price: 1000,
+  courseInstructor: "Basir",
+};
+
+// object destructure
+
+// console.log(course.courseInstructor);       // If you want to access the same property multiple times then you definitely dont write it again and again instead...
+
+// const {courseInstructor} = course       // Instead this is a better option
+// console.log(courseInstructor);
+
+const {courseInstructor: instructor} = course      // You can change the name of any property by using this method
+
+// console.log(instructor)
+
+// {
+//   name: "Vikram Aditya",
+//   age: 89,                   /** api in json format looks like this we will study this further in another class */
+//   profession: "MMA"
+// }
+
+[
+  {},
+  {},                    // api in array format
+  {}
+]
