@@ -78,8 +78,8 @@ const {courseInstructor: instructor} = course      // You can change the name of
 //   profession: "MMA"
 // }
 
-[
-  {},
-  {},                    // api in array format
-  {}
-]
+// [
+//   {},
+//   {},                    // api in array format
+//   {}
+// ]
