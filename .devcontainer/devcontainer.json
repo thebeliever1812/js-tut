@@ -21,7 +21,8 @@
         "esbenp.prettier-vscode",
         "vscode-icons-team.vscode-icons",
         "wayou.vscode-todo-highlight",
-        "formulahendry.code-runner"
+        "formulahendry.code-runner",
+        "ritwickdey.LiveServer"
       ],
       "keybindings": [
         {
@@ -35,7 +36,8 @@
         "terminal.integrated.fontSize": 14,
         "editor.wordWrap": "on",
         "code-runner.runInTerminal": true,
-        "editor.mouseWheelZoom": true
+        "editor.mouseWheelZoom": true,
+        "workbench.colorTheme": "Default Dark Modern"
       }
     }
   }
