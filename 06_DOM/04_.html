@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #202020; color: azure">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+
+  <script>
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    // addLanguage("Python")
+    // addLanguage("Maths")
+
+    function addLangauageOptimised(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addLangauageOptimised("Cpp");
+    addLangauageOptimised("Golang");
+
+    //******** Edit
+    const secondLangauge = document.querySelector("li:nth-child(2)");
+    // secondLangauge.innerHTML = "Swift";
+
+    // Another method for edit
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLangauge.replaceWith(newLi);
+
+    // Another method for edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>Typescript</li>";
+
+    /******** Remove******/
+
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove() // it removes the element
+  </script>
+</html>
