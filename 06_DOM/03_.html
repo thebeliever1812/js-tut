@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #202020; color: azure"></body>
+  <script>
+    const div = document.createElement("div");
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() + 10 + 1);
+
+    div.setAttribute("title", "DOM 3"); // We can add any attribute by this method
+    div.style.backgroundColor = "yellow";
+    div.style.padding = "10px";
+    div.style.color = "black"
+    // div.innerText = "Hello World"; // It override the text 
+    const addText = document.createTextNode("Hello India"); // This dosenot override the inner text, it create new text node
+    div.appendChild(addText);
+    document.body.appendChild(div) // Attach to the document // after this div will be visible on your page
+  </script>
+</html>
