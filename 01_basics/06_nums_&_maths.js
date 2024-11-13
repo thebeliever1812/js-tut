@@ -21,8 +21,8 @@ const hundreds = 1000000000000
 // console.log(Math);
 // console.log(Math.abs(-1));
 // console.log(Math.round(4.5));
-// console.log(Math.ceil(4.1));
-// console.log(Math.floor(4.9));
+console.log(Math.ceil(4.1)); // output: 5 // returns smallest integer greater than or equal to its numeric argument
+console.log(Math.floor(4.9)); // Output: 4 // returns greatest integer smaller than or equal to its numeric argument
 // console.log(Math.min(4, 1, 3, 9, 2));
 // console.log(Math.max(4, 1, 3, 9, 2));
 
@@ -33,4 +33,4 @@ const hundreds = 1000000000000
 const min = 10
 const max = 20
 
-console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+// console.log(Math.floor(Math.random() * (max - min + 1)) + min);
