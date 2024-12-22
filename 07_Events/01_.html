@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events 1</title>
+  </head>
+  <body style="background-color: #181818; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li> 
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+      </ul>
+    </div>
+  </body>
+
+  <!-- Note***: Events run sequentially in js, but there are some exceptions... Js m ham kbhi kbhi asynchronous prgramming bhi krte like sequentially run krke then we perform some different activity ..
+  Same exception are in browser events, we preform some activity by clicking or moving mouse etc -->
+  <script>
+    // document.getElementById('owl').onclick = function () {
+    //     alert('Owl Clicked') // This is not a good practice it gives less features
+    // }
+
+    //*** Best approach is using event listners
+    // there are two more methods which were used in early time 1. attachEvent() used when internet explorer used 2. jQuery -> .on
+
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log(e)
+    // }, false)
+    
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // Event propagation: event bubbling and event capturing
+
+    // document.getElementById('owl').addEventListener('click', function () {}, false) // Here false represents event bubbling and true represents event capturing, by default its false
+
+    // Let's take an example
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("Clicked inside the ul")
+    // }, false)
+    
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("Owl clicked")
+    // }, false)
+
+    // In this example we have used event bubbling means false so Jo sbse andr vala event hoga vo sbse pehle chlega or you can say bottom to top
+
+    // Example of event capturing:
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("Clicked inside the ul")
+    // }, true)
+    
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("Owl clicked")
+    // }, true)
+
+    // In this example we have used event capturing means true so Jo sbse bahar vala event hoga vo sbse pehle chlega or you can say top to bottom
+
+    // *** to stop event propagation
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("Clicked inside the ul")
+    // }, false)
+    
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("Owl clicked")
+    //     e.stopPropagation() // it stops the bubbling of event
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function (e) {
+    //     e.preventDefault() // It prevents from redirecting to google web page
+    //     console.log("Google clicked")
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName)
+        if (e.target.tagName === 'IMG') {
+            const removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        
+        // removeIt.parentNode.removeChild(removeIt) // first of all removeit give li then removeIt.parentNode give ul then we remove the child of ul which we have in removeIt
+    })
+  </script>
+</html>
