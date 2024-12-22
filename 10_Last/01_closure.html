@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: black">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+
+  <script>
+    // this is to access the variable of outer function
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName;
+    }
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+
+  <script>
+    // Example of closure
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+  </script>
+</html>
+
+<!-- Explanation of 1st script -->
+
+<!-- Outer Function makeFunc:
+
+Inside makeFunc, a variable name is declared and set to "Mozilla".
+
+A nested function displayName is defined, which logs the value of name to the console.
+
+The makeFunc function returns the displayName function (without executing it).
+
+Assigning myFunc:
+
+The line const myFunc = makeFunc(); calls makeFunc.
+
+This does two things:
+
+The makeFunc function executes and returns the displayName function.
+
+myFunc now holds a reference to the displayName function.
+
+Closure:
+
+Even though makeFunc has finished execution, the displayName function still remembers the scope in which it was created. This is a key concept in JavaScript called a closure.
+
+The name variable is part of the lexical scope of makeFunc, and because displayName references name, the closure preserves access to name.
+
+Executing myFunc():
+
+When myFunc() is called, it executes the displayName function.
+
+The displayName function still has access to the name variable ("Mozilla") via the closure, so it logs: Mozilla -->
