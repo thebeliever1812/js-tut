@@ -1,0 +1,11 @@
+#display {
+    height: 700px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+#click {
+    height: 2rem;
+    width: 4rem;
+    border-radius: 0.89rem;
+}
