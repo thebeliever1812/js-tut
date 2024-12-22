@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events 3</title>
+  </head>
+  <body>
+    <h1>Chai or Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+
+  <script>
+    const printDate = function (str) {
+      console.log(str, Date.now());
+    };
+    // const intervalId = setInterval(printDate, 2000, 'Hii Basir'); // we can pass arguments too
+
+    // clearInterval(intervalId) // to stop setInterval
+
+    let settingInterval;
+
+    document.querySelector("#start").addEventListener("click", function () {
+      settingInterval = setInterval(printDate, 1000, "Assignment done");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(settingInterval);
+    });
+  </script>
+</html>
